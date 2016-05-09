@@ -40,13 +40,13 @@ def read_dep(dep, depth=0):
 
         if last:
             if last == 'noun' and noun:
-                nouns[i-1][1].append(node[1])
+                nouns[i-1][1].extend(node[1])
                 drop_list.append(i)
             elif last == 'verb' and verb:
-                verbs[i-1][1].append(node[1])
+                verbs[i-1][1].extend(node[1])
                 drop_list.append(i)
             elif last == 'other' and other:
-                all_entities[i-1][1].append(node[1])
+                all_entities[i-1][1].extend(node[1])
                 drop_list.append(i)
         last = node[0]
         i += 1
